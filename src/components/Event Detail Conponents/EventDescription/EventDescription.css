@@ -1,0 +1,18 @@
+.line {
+  height: 0;
+  border: 1px solid #c4c4c4;
+}
+.blur {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 120px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  overflow: hidden;
+  z-index: 3;
+}

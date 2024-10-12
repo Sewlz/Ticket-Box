@@ -1,0 +1,54 @@
+{
+  "event": [
+    {
+      "id": "event001",
+      "name": "Ho Chi Minh City - The Bootleg Beatles",
+      "eventDate": "31 Tháng 10, 2024",
+      "eventTime": "20:00 - 22:00",
+      "description": "<h2>THE BOOTLEG BEATLES - 44th YEAR ANNIVERSARY TOUR</h2> <p>Nhập Code: <strong>SALE2010SG</strong> để được giảm 10% từ ngày 10/10 đến 20/10</p> <p>Với hơn 4.500 buổi biểu diễn và hành trình suốt 44 năm trình diễn khắp thế giới, chương trình biểu diễn của ban nhạc The Bootleg Beatles được mệnh danh là “The Greatest Beatles Show” đã làm sống lại sự nghiệp âm nhạc của The Beatles – ban nhạc số 1 thế giới với hàng loạt hit như <em>Yesterday</em>, <em>Hey Jude</em>, <em>Let it be</em>, <em>Here comes the sun</em>...</p> <p>Hãy cùng trải nghiệm sự kỳ diệu này và chuẩn bị sẵn sàng cho một hành trình âm nhạc được chăm chút hoàn hảo, tỉ mỉ từ trang phục, nhạc cụ cổ điển đích thực đến những câu nói đùa dí dỏm “Liverpudlian” khiến bạn thật sự được sống trong không gian âm nhạc ở thời kỳ đỉnh cao của Beatles theo một cách rất riêng.</p> <p>Bộ tứ tài năng này gồm có Steve White (Paul McCartney), Stephen Hill (George Harrison), Paul Canning (John Lennon) và Gordon Elsmore (Ringo Starr). Đây là một buổi biểu diễn không thể bỏ qua dành cho người hâm mộ Beatles nói riêng và các khán giả yêu nhạc nói chung ở mọi lứa tuổi như cách một nhà phê bình âm nhạc đã nói “Đó không phải là The Beatles....nhưng đơn giản là bạn sẽ không tin điều đó”.</p> <p><strong>*Chương trình này không dành cho trẻ em dưới 6 tuổi.</strong></p> <p><strong>*Người tham dự từ 6 tuổi đến 16 tuổi phải mang theo giấy khai sinh và đi cùng người thân trên 16 tuổi.</strong></p> <hr> <h2>THE BOOTLEG BEATLES TO ROCK VIETNAM WITH THREE UNFORGETTABLE SHOW</h2> <p>Music advocates, rejoice! Get ready to twist and shout because the legendary tribute band with over 4,500 electrifying performances across the globe, the Bootleg Beatles, is bringing their explosive live show to your shores this October and November!</p> <p>As part of their epic 44th anniversary tour, The Bootleg Beatles will be rocking out in Ho Chi Minh City and Hanoi, taking you on a meticulously crafted musical adventure that faithfully recreates the electrifying energy of The Beatles' era.</p> <p>Experience the Fab Four Like Never Before</p> <p>From the moment they hit the stage in their authentic costumes, armed with vintage instruments, and fire off some charming Liverpudlian banter, the Bootleg Beatles will instantly transport you back to the heart of the Beatles’s golden age. As one critic aptly put it, 'It's not The Beatles... but you simply won't believe it's not'.</p> <p>A Must-See for All Music Lovers</p> <p>This isn't just for die-hard Beatles fans! The Bootleg Beatles' high-octane show is a guaranteed crowd-pleaser for music lovers of all ages. Exploring The Beatles opens doors to a vast musical universe. Their music draws inspiration from rock and roll, blues, folk, and even classical influences.</p> <p><strong>*Minimum age requirement is 6 years old.</strong></p> <p><strong>*All minors aged 16 years old and below must be accompanied by a parent/guardian.</strong></p>",
+      "image": "https://salt.tkbcdn.com/ts/ds/2d/93/c3/91611a634b4e80e818b6c1672606a6f5.png",
+      "theater": {
+        "theaterName": "LalaLand Hồ Con Rùa",
+        "theaterAddress": " 86 Nguyễn Thị Minh Khai, P. Võ Thị Sáu, Q. 3, TP.HCM"
+      },
+      "categoryId": "Music",
+      "seats": [
+        {
+          "seatId": "A1",
+          "ticketType": "Vip",
+          "status": "available"
+        },
+        {
+          "seatId": "A2",
+          "ticketType": "Vip",
+          "status": "booked"
+        },
+        {
+          "seatId": "A3",
+          "ticketType": "Regular",
+          "status": "available"
+        }
+      ],
+      "pricing": [
+        {
+          "ticketType": "Regular",
+          "price": "999.000",
+          "currency": "VND",
+          "quantity": 20
+        },
+        {
+          "ticketType": "Vip",
+          "price": "1.300.000",
+          "currency": "VND",
+          "quantity": 20
+        }
+      ],
+      "organizer": {
+        "organizerId": "org001",
+        "name": "Rock Events Ltd.",
+        "organizerImg": "https://salt.tkbcdn.com/ts/ds/2d/93/c3/91611a634b4e80e818b6c1672606a6f5.png"
+      },
+      "createdAt": "2024-09-25T10:00:00Z"
+    }
+  ]
+}

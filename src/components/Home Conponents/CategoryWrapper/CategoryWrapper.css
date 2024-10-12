@@ -1,0 +1,22 @@
+.tbox-container {
+  background-color: black;
+  z-index: 1111111111 !important;
+  position: relative;
+}
+.content {
+  display: flex;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.item-category {
+  margin: 10px;
+  color: white;
+}
+.item-category:hover {
+  color: #2dc275;
+}
+@media (max-width: 640px) {
+  .item-category {
+    font-size: small;
+  }
+}
