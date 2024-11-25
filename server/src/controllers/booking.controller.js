@@ -1,10 +1,9 @@
-// controllers/bookingController.js
-const Booking = require("../models/bookingModel");
-const Event = require("../models/eventModel");
+const Booking = require("../models/booking.model.js");
+const Event = require("../models/event.model.js");
 const {
   createPayPalOrder,
   capturePayPalOrder,
-} = require("../utils/paypalUtil");
+} = require("../utils/palypal.util.js");
 
 // @desc Create a booking and generate a PayPal order
 exports.createBooking = async (req, res) => {

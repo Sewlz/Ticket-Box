@@ -1,8 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const connectDB = require("./scr/config/db");
-const eventRoutes = require("./src/routes/eventRoutes");
-const bookingRoutes = require("./src/routes/bookingRoutes");
+const connectDB = require("./src/config/db.js");
+const eventRoutes = require("./src/routes/event.route.js");
+const bookingRoutes = require("./src/routes/booking.route.js");
 dotenv.config();
 connectDB();
 

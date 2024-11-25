@@ -5,7 +5,7 @@ const {
   capturePayment,
   getBookings,
   getBookingById,
-} = require("../controllers/bookingController");
+} = require("../controllers/booking.controller.js");
 
 const router = express.Router();
 

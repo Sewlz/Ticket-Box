@@ -8,7 +8,7 @@ const {
   updateEvent,
   deleteEvent,
   getLatestEvents,
-} = require("../controllers/eventController");
+} = require("../controllers/event.controller.js");
 
 // Route to create an event
 router.post("/", createEvent);
