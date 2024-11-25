@@ -1,8 +1,8 @@
 const axios = require("axios");
 
 const getPayPalAccessToken = async () => {
-  const clientId = process.env.PAYPAL_CLIENT_ID;
-  const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
+  const clientId = process.env.CLIENT_ID;
+  const clientSecret = process.env.CLIENT_SECRET;
   const auth = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 
   const { data } = await axios.post(
@@ -33,6 +33,10 @@ const createPayPalOrder = async (amount, currency = "USD") => {
           },
         },
       ],
+      application_context: {
+        return_url: "http://localhost:5000/api/bookings/capture",
+        cancel_url: "http://localhost:5000/api/bookings/cancel",
+      },
     },
     {
       headers: {

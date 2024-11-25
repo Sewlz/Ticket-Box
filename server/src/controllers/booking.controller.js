@@ -5,7 +5,6 @@ const {
   capturePayPalOrder,
 } = require("../utils/palypal.util.js");
 
-// @desc Create a booking and generate a PayPal order
 exports.createBooking = async (req, res) => {
   const { eventId, userName, userEmail, seatsBooked } = req.body;
 
@@ -19,7 +18,6 @@ exports.createBooking = async (req, res) => {
 
     const totalPrice = event.price * seatsBooked;
 
-    // Create a new booking with Pending payment status
     const booking = await Booking.create({
       eventId,
       userName,
@@ -29,7 +27,6 @@ exports.createBooking = async (req, res) => {
       paymentStatus: "Pending",
     });
 
-    // Create a PayPal order
     const paypalOrder = await createPayPalOrder(totalPrice);
 
     res.status(201).json({
@@ -39,36 +36,67 @@ exports.createBooking = async (req, res) => {
         .href,
     });
   } catch (error) {
+    console.log("🚀 ~ exports.createBooking= ~ error:", error);
     res.status(500).json({ error: error.message });
   }
 };
 
-// @desc Capture PayPal payment and update booking status
 exports.capturePayment = async (req, res) => {
   const { orderID, bookingID } = req.body;
+
+  if (!orderID || !bookingID) {
+    return res.status(400).json({
+      message: "orderID and bookingID are required",
+    });
+  }
 
   try {
     const captureData = await capturePayPalOrder(orderID);
 
+    if (!captureData || captureData.status !== "COMPLETED") {
+      return res.status(422).json({
+        message: "Payment capture failed or not completed",
+        details: captureData,
+      });
+    }
+
     const booking = await Booking.findById(bookingID);
-    if (!booking) return res.status(404).json({ message: "Booking not found" });
+    if (!booking) {
+      return res.status(404).json({ message: "Booking not found" });
+    }
 
     booking.paymentStatus = "Completed";
     booking.transactionId = orderID;
     await booking.save();
 
-    // Update event's available seats
     const event = await Event.findById(booking.eventId);
+    if (!event) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+
+    if (event.availableSeats < booking.seatsBooked) {
+      return res.status(400).json({
+        message: "Not enough available seats for this booking",
+      });
+    }
+
     event.availableSeats -= booking.seatsBooked;
     await event.save();
 
-    res.status(200).json({ message: "Payment captured successfully", booking });
+    return res.status(200).json({
+      message: "Payment captured successfully",
+      booking,
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("🚀 ~ capturePayment error:", error);
+
+    return res.status(500).json({
+      message: "An error occurred while capturing the payment",
+      error: error.message,
+    });
   }
 };
 
-// @desc Get all bookings
 exports.getBookings = async (req, res) => {
   try {
     const bookings = await Booking.find().populate("eventId");
@@ -78,7 +106,6 @@ exports.getBookings = async (req, res) => {
   }
 };
 
-// @desc Get a single booking
 exports.getBookingById = async (req, res) => {
   const { id } = req.params;
 
