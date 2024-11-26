@@ -11,17 +11,23 @@
   left: 20px;
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .ticket-img {
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 .banner-info > div > span {
   color: rgb(255, 255, 255);
   font-size: 14px;
   font-weight: 600;
   position: relative;
+}
+
+.card-info {
+  background-color: #38383d;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
 }

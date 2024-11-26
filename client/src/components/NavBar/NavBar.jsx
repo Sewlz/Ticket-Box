@@ -1,13 +1,20 @@
 import React from "react";
 import logo from "../../assets/ticketboxLogo.png";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  Container,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <div className="nav-container">
-      <div className="nav-wrapper">
+      <Container>
         <Navbar expand="lg" className="navbar text-light p-3">
           <Navbar.Brand as={Link} to="/home">
             <img
@@ -48,7 +55,7 @@ const NavBar = () => {
               </div>
             </Form>
             <Nav className="ms-auto d-flex gap-3">
-              <Button variant="outline-light rounded-pill fs-6">
+              <Button as={Link} to="/event-create" variant="outline-light rounded-pill fs-6">
                 Create Event
               </Button>
               <Nav.Link as={Link} to="/tickets" className="text-light fs-6">
@@ -63,7 +70,7 @@ const NavBar = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </Container>
     </div>
   );
 };

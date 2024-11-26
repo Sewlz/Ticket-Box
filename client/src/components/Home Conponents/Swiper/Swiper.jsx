@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Swiper.css";
 import HoverVideoPlayer from "../HoverVideo/HoverVideo";
 export function HomeBanner() {
+  const navigate = useNavigate();
   return (
     <div className="mb-4">
       <Swiper
@@ -49,7 +50,12 @@ export function HomeBanner() {
                   <i class="fa-solid fa-circle"></i> 12 Tháng 10, 2024
                 </span>
               </div>
-              <button className="btn btn-light mt-2">View Detail</button>
+              <button
+                className="btn btn-light mt-2"
+                onClick={() => navigate("/event-detail")}
+              >
+                View Detail
+              </button>
             </div>
           </div>
         </SwiperSlide>
@@ -67,7 +73,12 @@ export function HomeBanner() {
                   <i class="fa-solid fa-circle"></i> 12 Tháng 10, 2024
                 </span>
               </div>
-              <button className="btn btn-light mt-2">View Detail</button>
+              <button
+                className="btn btn-light mt-2"
+                onClick={() => navigate("/event-detail")}
+              >
+                View Detail
+              </button>
             </div>
           </div>
         </SwiperSlide>
@@ -85,7 +96,12 @@ export function HomeBanner() {
                   <i class="fa-solid fa-circle"></i> 12 Tháng 10, 2024
                 </span>
               </div>
-              <button className="btn btn-light mt-2">View Detail</button>
+              <button
+                className="btn btn-light mt-2"
+                onClick={() => navigate("/event-detail")}
+              >
+                View Detail
+              </button>
             </div>
           </div>
         </SwiperSlide>
@@ -94,6 +110,7 @@ export function HomeBanner() {
   );
 }
 export function TicketSection() {
+  const navigate = useNavigate();
   return (
     <div className="mb-4">
       <h4 className="text-light mb-3">Sự kiện xu hướng</h4>
@@ -126,13 +143,16 @@ export function TicketSection() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="ticket-card">
+          <div
+            className="ticket-card"
+            onClick={() => navigate("/event-detail")}
+          >
             <img
               src="https://images.tkbcdn.com/2/608/332/ts/ds/62/08/f8/80eadd37d65c9fe07a4c60f4ce843cdc.jpg"
               alt=""
               className="ticket-img"
             />
-            <div className="ticket-info">
+            <div className="card-info">
               <h7 className="text-light">
                 [BẾN THÀNH] Đêm nhạc Thanh Duy - Myra Trần
               </h7>
@@ -156,7 +176,10 @@ export function TicketSection() {
               alt=""
               className="ticket-img"
             />
-            <div className="ticket-info">
+            <div
+              className="card-info"
+              onClick={() => navigate("/event-detail")}
+            >
               <h7 className="text-light">
                 [BẾN THÀNH] Đêm nhạc Thanh Duy - Myra Trần
               </h7>
@@ -174,13 +197,16 @@ export function TicketSection() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="ticket-card">
+          <div
+            className="ticket-card"
+            onClick={() => navigate("/event-detail")}
+          >
             <img
               src="https://images.tkbcdn.com/2/608/332/ts/ds/62/08/f8/80eadd37d65c9fe07a4c60f4ce843cdc.jpg"
               alt=""
               className="ticket-img"
             />
-            <div className="ticket-info">
+            <div className="card-info">
               <h7 className="text-light">
                 [BẾN THÀNH] Đêm nhạc Thanh Duy - Myra Trần
               </h7>
@@ -198,13 +224,16 @@ export function TicketSection() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="ticket-card">
+          <div
+            className="ticket-card"
+            onClick={() => navigate("/event-detail")}
+          >
             <img
               src="https://images.tkbcdn.com/2/608/332/ts/ds/62/08/f8/80eadd37d65c9fe07a4c60f4ce843cdc.jpg"
               alt=""
               className="ticket-img"
             />
-            <div className="ticket-info">
+            <div className="card-info">
               <h7 className="text-light">
                 [BẾN THÀNH] Đêm nhạc Thanh Duy - Myra Trần
               </h7>

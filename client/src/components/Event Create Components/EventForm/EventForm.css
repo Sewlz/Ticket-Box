@@ -1,0 +1,298 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Form Container */
+.event-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+/* Form Box */
+.event-form-box {
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  min-height: 500px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #4caf50;
+}
+
+.event-form .form-group {
+  margin-bottom: 20px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Đảm bảo các input có kiểu dáng đồng đều */
+.event-form input,
+.event-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  background-color: #262626;
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.event-form input[type="date"],
+.event-form input[type="time"] {
+  height: 48px;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+  background-color: #2e2e2e;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.event-form textarea {
+  height: 120px;
+}
+
+.event-form .submit-button {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.event-form .submit-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* Form group container */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.form-group select {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  background-color: #262626;
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group select:focus {
+  border-color: #4caf50;
+  background-color: #2e2e2e;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Option styling */
+.form-group select option {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.form-group select option:hover {
+  background-color: #4caf50;
+}
+
+/* Placeholder styling */
+.form-group select option:first-child {
+  color: #aaa;
+}
+
+/* Responsive Design for small screens */
+@media (max-width: 768px) {
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group select {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+/* Image Preview */
+.image-preview-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn {
+  background-color: #388e3c;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .event-form-container {
+    width: 90vw;
+  }
+
+  .event-form-box {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .event-form input,
+  .event-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .event-form .submit-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .image-preview {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-form-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .event-form-box {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .event-form input,
+  .event-form textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .event-form .submit-button {
+    padding: 12px 15px;
+  }
+
+  .image-preview {
+    max-width: 180px;
+  }
+}
+
+/* Đảm bảo nó không vượt quá chiều rộng màn hình */
+@media (max-width: 480px) {
+  .event-form-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .event-form-box {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .event-form input,
+  .event-form textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .event-form .submit-button {
+    padding: 10px 12px;
+  }
+
+  .image-preview {
+    max-width: 160px;
+  }
+}
+
+/* C:\Users\assas\OneDrive\Máy tính\Test\my-ticketbox-clone\src\components\EventCreater\EventForm.css */
