@@ -1,0 +1,121 @@
+/* Wrapper cho phần không có kết quả tìm kiếm */
+.event-grid-wrapper {
+  margin-top: 20px; /* Khoảng cách dưới tiêu đề và lưới sự kiện */
+  padding: 0 px; /* Thêm padding hai bên để không bị sát viền web */
+  border-radius: 20px; /* Bo góc lưới sự kiện */
+  overflow: hidden; /* Ẩn phần tràn ra ngoài */
+}
+
+/* Lưới các card */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột trên mỗi hàng */
+  gap: 15px; /* Giảm khoảng cách giữa các EventCard */
+  width: 100%; /* Lưới chiếm toàn bộ chiều rộng */
+  max-width: 100%; /* Giới hạn độ rộng */
+  padding: 20px 190px; /* Không có padding ở lưới */
+  box-sizing: border-box;
+}
+
+/* Card sự kiện */
+.event-card {
+  position: relative;
+  border-radius: 10px; /* Bo góc các card */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px; /* Giảm chiều cao của card */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ảnh trong card */
+.event-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Giữ tỷ lệ 16:9 */
+  object-fit: cover;
+  border-top-left-radius: 10px; /* Bo góc ảnh */
+  border-top-right-radius: 10px; /* Bo góc ảnh */
+}
+
+.event-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px;
+  border-bottom-left-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.past {
+  background-color: #ff9800;
+}
+
+.ongoing {
+  background-color: #4caf50;
+}
+
+.event-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-title {
+  font-size: 14px; /* Giảm kích thước chữ tiêu đề */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-price {
+  font-size: 14px; /* Giảm kích thước chữ giá */
+  color: rgb(45, 194, 117) !important;
+  font-weight: 600 !important;
+}
+
+.event-date {
+  font-size: 14px;
+  color: #999;
+  margin-top: 5px;
+}
+.event-date-container svg {
+  margin-right: 8px; /* Khoảng cách giữa SVG và ngày */
+  fill: #999; /* Màu của SVG */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .event-grid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 cột khi màn hình nhỏ hơn 1200px */
+  }
+}
+
+@media (max-width: 768px) {
+  .event-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 cột khi màn hình nhỏ hơn 768px */
+  }
+}
+
+@media (max-width: 480px) {
+  .event-grid {
+    grid-template-columns: 1fr; /* 1 cột khi màn hình nhỏ hơn 480px */
+  }
+}

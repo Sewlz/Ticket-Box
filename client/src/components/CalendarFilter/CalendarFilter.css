@@ -1,0 +1,132 @@
+/* Khung bao CalendarFilter */
+.calendar-filter {
+  position: relative; /* Thiết lập vị trí tương đối cho container */
+}
+
+/* Nút sắp xếp theo ngày */
+.calendar-filter__sort-btn {
+  padding: 6px 29px; /* Tăng kích thước nút */
+  background-color: #777; /* Giữ màu nền */
+  color: #ffffff; /* Chữ trắng */
+  font-size: 14px; /* Tăng kích thước chữ */
+  font-weight: 750; /* Chữ đậm nhưng không quá cứng nhắc */
+  border: none;
+  border-radius: 1.5px; /* Bo góc mềm mại */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng hover */
+  width: auto; /* Chiếm chiều rộng tự động */
+  margin-bottom: 15px; /* Khoảng cách dưới nút */
+  position: absolute; /* Đặt nút ở vị trí tuyệt đối */
+  right: 315px; /* Di chuyển nút sang phải */
+  top: -10px; /* Đặt nút ở trên cùng */
+  z-index: 1000; /* Đảm bảo nút luôn ở trên dropdown */
+}
+
+/* Khi nút đang trong trạng thái active */
+.calendar-filter__sort-btn.active {
+  background-color: #2dc275; /* Màu nền khi nhấn */
+  color: #ffffff; /* Màu chữ khi nhấn */
+}
+
+/* Hiệu ứng hover cho nút */
+.calendar-filter__sort-btn:hover {
+  background-color: #27a86a;
+  color: #ffffff; /* Đổi màu chữ thành xanh khi hover */
+}
+.calendar-filter__icon {
+  margin-right: 10px; /* Thêm khoảng cách 5px bên phải icon */
+}
+/* Hiệu ứng khi nhấn nút (active) */
+.calendar-filter__sort-btn:active {
+  background-color: #2dc275;
+  color: #ffffff;
+}
+
+/* Dropdown các lựa chọn */
+.calendar-filter__sort-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách giữa các lựa chọn */
+  background-color: #ffffff; /* Nền trắng */
+  padding: 20px;
+  border-radius: 1.5px; /* Bo góc mềm mại */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  position: absolute;
+  top: 23px; /* Đặt dropdown ngay dưới nút */
+  right: 207px; /* Đảm bảo dropdown căn phải với nút */
+  width: 100%; /* Độ rộng của dropdown bằng với nút */
+  max-width: 310px; /* Giới hạn chiều rộng tối đa của dropdown */
+  z-index: 999; /* Đảm bảo dropdown hiển thị trên các thành phần khác */
+}
+
+/* Các lựa chọn trong dropdown */
+.calendar-filter__select {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Đường viền màu xám */
+  border-radius: 8px; /* Bo góc mềm mại */
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px; /* Khoảng cách dưới các lựa chọn */
+}
+
+.calendar-filter__select:focus {
+  border-color: #2dc275; /* Đổi màu viền khi focus */
+  outline: none;
+}
+
+/* Custom date picker */
+.calendar-filter__custom-date-picker {
+  width: 100%;
+  margin-top: 10px; /* Khoảng cách trên */
+}
+
+.calendar-filter__date-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px; /* Khoảng cách dưới input */
+}
+
+.calendar-filter__date-input:focus {
+  border-color: #2dc275; /* Đổi màu viền khi focus */
+  outline: none;
+}
+
+/* Nút áp dụng filter */
+.calendar-filter__apply-btn {
+  padding: 14px 28px; /* Tăng kích thước nút */
+  font-size: 18px;
+  background-color: #2dc275; /* Giữ màu nền */
+  color: #fff; /* Chữ trắng */
+  border: none;
+  border-radius: 8px; /* Bo góc */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Nút không chiếm hết chiều rộng */
+  margin-left: auto; /* Căn phải cho nút */
+  display: block; /* Hiển thị dưới dạng block để căn chỉnh */
+  margin-top: 5px; /* Khoảng cách trên nút */
+  font-weight: 600; /* Chữ đậm */
+}
+
+.calendar-filter__apply-btn:hover {
+  background-color: #27a86a; /* Đổi màu khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Phản hồi trạng thái filter */
+.calendar-filter__feedback {
+  display: none; /* Ẩn feedback khi chưa áp dụng bộ lọc */
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px; /* Khoảng cách trên */
+  font-weight: 400;
+  font-style: normal;
+  flex: 1 1 0%;
+}

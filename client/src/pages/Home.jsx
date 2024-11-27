@@ -14,7 +14,6 @@ export function Home() {
       {/* <div className="home-container">
         <HomeBanner />
         <TicketSection />
-
       </div> */}
       <TicketBanner />
       <EventDetails />

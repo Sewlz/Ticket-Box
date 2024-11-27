@@ -1,0 +1,56 @@
+/* Wrapper cho phần không có kết quả tìm kiếm */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* Đảm bảo không có khoảng cách xung quanh */
+  width: 99vw; /* Chiếm toàn bộ chiều rộng của màn hình */
+  height: 100%; /* Chiếm toàn bộ chiều cao của màn hình */
+  margin-bottom: 300px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ngừng hiển thị phần tử tràn ra ngoài */
+}
+.no-results-image {
+  max-width: 132px; /* Giới hạn chiều rộng tối đa của ảnh */
+  height: auto;
+  margin-bottom: 20px; /* Khoảng cách giữa ảnh và văn bản */
+}
+/* Cập nhật khoảng cách dưới thanh tìm kiếm */
+.search-results h1 {
+  margin-top: 50px; /* Tạo khoảng cách cho tiêu đề */
+  text-align: left;
+  margin-left: 187px;
+  color: rgb(45, 194, 117);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  flex: 1 1 0%;
+}
+/* Căn giữa nội dung văn bản với ảnh */
+.no-results-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Đảm bảo văn bản chiếm toàn bộ chiều rộng */
+}
+
+/* Văn bản hiển thị khi không có kết quả */
+.no-results-text p {
+  font-size: 16px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.no-results-text p:first-child {
+  font-weight: bold;
+}
+
+.no-results-text p:last-child {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
