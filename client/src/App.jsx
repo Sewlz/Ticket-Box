@@ -1,10 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { SeatBooking } from "./pages/SeatBooking";
-import SearchResults from "./pages/SearchResults"; // Import SearchResults
-import { EventDetail } from "./pages/EventDetail";
-import EventListPage from "./pages/EventListPage"; // Import EventListPage
-import EventLayout from "./components/Event Create Components/EventLayout/EventLayout"; // Import đúng với default export
+import SearchResults from "./pages/SearchResults";
+import EventListPage from "./pages/EventListPage";
+import EventLayout from "./components/Event Create Components/EventLayout/EventLayout";
 import { EventDetail } from "./pages/EventDetail";
 import { ResultPage } from "./components/Booking Conponents/Success";
 import BookingList from "./components/Booking Conponents/BookingList";

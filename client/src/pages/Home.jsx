@@ -3,7 +3,7 @@ import {
   TicketSection,
 } from "../components/Home Conponents/Swiper";
 import "./styles/Home.css";
-import { CategoryWrapper } from "../components/Home Conponents/CategoryWrapper/CategoryWrapper";
+import { CategoryWrapper } from "../components/Home Conponents/CategoryWrapper";
 import { Container } from "react-bootstrap";
 export function Home() {
   return (
