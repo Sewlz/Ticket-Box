@@ -89,7 +89,8 @@ i {
   position: absolute;
   right: 0px;
   z-index: 10;
-  transform: translate(2px, -4.4rem);
+  bottom: 0;
+  transform: translate(2px, -2rem);
 }
 @media (max-width: 768px) {
   .ticket-wrapper {

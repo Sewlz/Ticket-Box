@@ -30,16 +30,36 @@ exports.createEvent = async (req, res) => {
   }
 };
 
-// @desc Get all events with search and sort by category
+// @desc Get all events with search, category, date filter, and sort
 exports.getEvents = async (req, res) => {
-  const { search, category, sortBy = "date" } = req.query;
+  const { search, category, location, date, sortBy = "date" } = req.query;
 
   try {
     const query = {};
-    if (search) query.title = { $regex: search, $options: "i" }; // Case-insensitive search
+
+    // Search by title, description, or location
+    if (search) {
+      query.$or = [
+        { title: { $regex: search, $options: "i" } }, // Search in title
+        { category: { $regex: search, $options: "i" } }, // Search in category
+        { location: { $regex: search, $options: "i" } }, // Search in location
+      ];
+    }
+
+    // Filter by category
     if (category) query.category = category;
 
-    const events = await Event.find(query).sort(sortBy); // Default sort by date
+    // Filter by location if available
+    if (location) query.location = { $regex: location, $options: "i" };
+
+    // Filter by date if provided (example: events from a certain date)
+    if (date) {
+      query.date = { $gte: new Date(date) }; // Get events from the provided date onwards
+    }
+
+    // Query events and sort by the provided parameter (default: date)
+    const events = await Event.find(query).sort({ [sortBy]: 1 }); // Sorting by date, price, etc.
+
     res.status(200).json(events);
   } catch (error) {
     res.status(400).json({ error: error.message });

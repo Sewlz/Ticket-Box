@@ -1,13 +1,26 @@
-import React from "react";
+import { useState } from "react";
 import logo from "../../assets/ticketboxLogo.png";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Nav, Button, Form, Container } from "react-bootstrap"; // Import Container ở đây
+import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const [searchQuery, setSearchQuery] = useState(""); // State lưu trữ từ khóa tìm kiếm
+  const navigate = useNavigate(); // Dùng để điều hướng
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?search=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery("");
+    }
+  };
+
   return (
     <div className="nav-container">
-      <div className="nav-wrapper">
+      <Container>
+        {" "}
+        {/* Đảm bảo Container được bao quanh nội dung */}
         <Navbar expand="lg" className="navbar text-light p-3">
           <Navbar.Brand as={Link} to="/home">
             <img
@@ -18,7 +31,8 @@ const NavBar = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form className="d-flex mx-auto me-lg-3">
+            {/* Thanh tìm kiếm duy nhất trong Navbar */}
+            <Form className="d-flex mx-auto me-lg-3" onSubmit={handleSearch}>
               <div className="search-container">
                 <svg
                   width="24"
@@ -43,12 +57,20 @@ const NavBar = () => {
                   name="search-input"
                   id="search-input"
                   className="search-input fs-6"
+                  value={searchQuery} // Liên kết state với input
+                  onChange={(e) => setSearchQuery(e.target.value)} // Cập nhật state khi người dùng nhập
                 />
-                <button className="search-button fs-6">Tìm kiếm</button>
+                <button type="submit" className="search-button fs-6">
+                  Tìm kiếm
+                </button>
               </div>
             </Form>
             <Nav className="ms-auto d-flex gap-3">
-              <Button variant="outline-light rounded-pill fs-6">
+              <Button
+                as={Link}
+                to="/event-create"
+                variant="outline-light rounded-pill fs-6"
+              >
                 Create Event
               </Button>
               <Nav.Link as={Link} to="/my-booking" className="text-light fs-6">
@@ -63,7 +85,7 @@ const NavBar = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </Container>
     </div>
   );
 };
