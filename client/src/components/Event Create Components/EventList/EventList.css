@@ -1,0 +1,308 @@
+/* Tổng thể container của danh sách sự kiện */
+.custom-event-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 85vw;
+  padding: 20px;
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* Header */
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #333;
+}
+
+/* Phần tìm kiếm */
+.custom-search-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-start;
+  max-width: 60%;
+}
+
+.custom-search-bar {
+  padding: 12px 15px;
+  flex-grow: 1;
+  max-width: 400px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.custom-search-bar::placeholder {
+  color: #999;
+}
+
+.custom-search-bar:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.custom-search-btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-search-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Các nút lọc */
+.custom-filters {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.custom-filter-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #555;
+  transition: all 0.3s ease;
+}
+
+.custom-filter-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.custom-filter-btn.active {
+  background-color: #388e3c;
+  border-color: #4caf50;
+  color: #fff;
+}
+
+/* Phần nội dung */
+.custom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.custom-placeholder {
+  font-size: 18px;
+  color: #000000;
+}
+
+.custom-placeholder span {
+  font-size: 50px;
+}
+
+.custom-placeholder p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* EventCard CSS */
+.custom-event-carm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.custom-event-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  border-radius: 15px;
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.custom-event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-event-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.custom-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-event-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-event-details h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: bold;
+}
+
+.custom-event-details p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.custom-event-details strong {
+  color: #4caf50;
+}
+
+.custom-event-details .custom-date-location {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-event-details .custom-date-location span {
+  font-weight: 500;
+}
+
+/* Nút xóa */
+.custom-delete-btn {
+  background-color: #f44336; /* Màu đỏ cho nút xóa */
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.custom-delete-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.custom-delete-btn:focus {
+  outline: none;
+}
+
+/* Nút Edit */
+.custom-edit-btn {
+  background-color: #4caf50; /* Màu xanh cho nút edit */
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.custom-edit-btn:hover {
+  background-color: #139f00;
+  transform: scale(1.05);
+}
+
+.custom-edit-btn:focus {
+  outline: none;
+}
+
+/* Edit form fields */
+.custom-edit-input,
+.custom-edit-textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.custom-save-btn,
+.custom-cancel-btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.custom-save-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.custom-cancel-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Mobile Responsive: */
+@media (max-width: 768px) {
+  .custom-event-card {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .custom-event-details {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .custom-event-details p {
+    display: none; /* Giấu thông tin khi nhỏ */
+  }
+
+  .custom-actions button {
+    font-size: 12px;
+  }
+
+  .custom-edit-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}

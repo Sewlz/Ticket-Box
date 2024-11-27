@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../../assets/ticketboxLogo.png";
-import { Navbar, Nav, Button, Form } from "react-bootstrap";
+import { Navbar, Nav, Button, Form, Container } from "react-bootstrap"; // Import Container ở đây
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
@@ -18,7 +18,9 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
-      <div className="nav-wrapper">
+      <Container>
+        {" "}
+        {/* Đảm bảo Container được bao quanh nội dung */}
         <Navbar expand="lg" className="navbar text-light p-3">
           <Navbar.Brand as={Link} to="/home">
             <img
@@ -64,7 +66,11 @@ const NavBar = () => {
               </div>
             </Form>
             <Nav className="ms-auto d-flex gap-3">
-              <Button variant="outline-light rounded-pill fs-6">
+              <Button
+                as={Link}
+                to="/event-create"
+                variant="outline-light rounded-pill fs-6"
+              >
                 Create Event
               </Button>
               <Nav.Link as={Link} to="/tickets" className="text-light fs-6">
@@ -79,7 +85,7 @@ const NavBar = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </Container>
     </div>
   );
 };
