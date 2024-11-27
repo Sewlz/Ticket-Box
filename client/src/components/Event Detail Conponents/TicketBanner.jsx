@@ -1,9 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./TicketBanner.css";
-import eventData from "../../../data/event.json";
-
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import "./style/TicketBanner.css";
+import { useFetch } from "../../hooks/UseFetch";
+const apiUrl = "http://localhost:5000/api/";
 export function TicketBanner() {
-  const [tickets, setTickets] = useState(eventData.event[0]);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const {
+    data: ticket,
+    loading,
+    error,
+  } = useFetch(`${apiUrl}events/${id}`, [id]);
+
+  if (loading) {
+    return <div>Loading ticket details...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading ticket: {error.message}</div>;
+  }
+  function handleClick(e) {
+    e.stopPropagation();
+    navigate(`/seat-select/${id}`);
+  }
   return (
     <div className="ticket-banner">
       <div className="ticket-wrapper">
@@ -27,40 +46,39 @@ export function TicketBanner() {
             ></path>
           </svg>
 
-          <h2 className="text-light bold">{tickets.name}</h2>
+          <h2 className="text-light bold fs-2">{ticket.title}</h2>
 
           <div className="ticket-info">
             <div className="date-time">
               <i className="fas fa-calendar-alt text-light"></i>{" "}
               <span className="text-success">
-                {`${tickets.eventTime}, ${tickets.eventDate}`}
+                {`${new Date(ticket.date).toLocaleTimeString()}, ${new Date(
+                  ticket.eventDate
+                ).toLocaleTimeString()}`}
               </span>
             </div>
             <div className="location">
               <i className="fas fa-map-marker-alt text-light"></i>
-              <span className="text-success">
-                {tickets.theater.theaterName}
-              </span>
-              <p className="text-light mt-2">
-                {tickets.theater.theaterAddress}
-              </p>
+              <span className="text-light mt-2">{ticket.location}</span>
             </div>
           </div>
           <div className="text-light price">
             <div className="line mb-2"></div>
             <span className="text-light">Giá từ: </span>
-            <span className="text-success">{tickets.pricing[0].price} đ</span>
+            <span className="text-success">{ticket.price} đ</span>
           </div>
-          <button className="btn btn-success btn-lg btn-block mb-2">
-            Chọn lịch diễn
+          <button
+            className="btn btn-success btn-lg btn-block mb-2"
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
+            Mua vé ngay!
           </button>
         </div>
 
         <div className="ticket-image">
-          <img
-            src="https://salt.tkbcdn.com/ts/ds/2d/93/c3/91611a634b4e80e818b6c1672606a6f5.png"
-            alt="The Bootleg Beatles"
-          />
+          <img src={`${ticket.image}`} alt="The Bootleg Beatles" />
         </div>
       </div>
     </div>

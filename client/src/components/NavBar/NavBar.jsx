@@ -51,7 +51,7 @@ const NavBar = () => {
               <Button variant="outline-light rounded-pill fs-6">
                 Create Event
               </Button>
-              <Nav.Link as={Link} to="/tickets" className="text-light fs-6">
+              <Nav.Link as={Link} to="/my-booking" className="text-light fs-6">
                 <i class="fa-solid fa-ticket"></i>Tickets You Buy
               </Nav.Link>
               <Nav.Link as={Link} to="/login" className="text-light fs-6">

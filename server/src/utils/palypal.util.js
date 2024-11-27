@@ -34,8 +34,8 @@ const createPayPalOrder = async (amount, currency = "USD") => {
         },
       ],
       application_context: {
-        return_url: "http://localhost:5000/api/bookings/capture",
-        cancel_url: "http://localhost:5000/api/bookings/cancel",
+        return_url: "http://localhost:5173/result",
+        cancel_url: "http://localhost:5173/result",
       },
     },
     {

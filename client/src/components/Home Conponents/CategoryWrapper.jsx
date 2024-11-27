@@ -1,4 +1,4 @@
-import "./CategoryWrapper.css";
+import "./style/CategoryWrapper.css";
 export function CategoryWrapper() {
   return (
     <div className="tbox-container">

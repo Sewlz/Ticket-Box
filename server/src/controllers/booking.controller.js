@@ -42,9 +42,15 @@ exports.createBooking = async (req, res) => {
 };
 
 exports.capturePayment = async (req, res) => {
-  const { orderID, bookingID } = req.body;
+  const { orderID } = req.body;
+  const latestBooking = await Booking.findOne()
+    .sort({ createdAt: -1 })
+    .populate("eventId");
 
-  if (!orderID || !bookingID) {
+  if (!latestBooking) {
+    return res.status(404).json({ message: "No bookings found for this user" });
+  }
+  if (!orderID || !latestBooking._id) {
     return res.status(400).json({
       message: "orderID and bookingID are required",
     });
@@ -60,7 +66,7 @@ exports.capturePayment = async (req, res) => {
       });
     }
 
-    const booking = await Booking.findById(bookingID);
+    const booking = await Booking.findById(latestBooking._id);
     if (!booking) {
       return res.status(404).json({ message: "Booking not found" });
     }
@@ -99,7 +105,7 @@ exports.capturePayment = async (req, res) => {
 
 exports.getBookings = async (req, res) => {
   try {
-    const bookings = await Booking.find().populate("eventId");
+    const bookings = await Booking.find();
     res.status(200).json(bookings);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -110,7 +116,7 @@ exports.getBookingById = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const booking = await Booking.findById(id).populate("eventId");
+    const booking = await Booking.findById(id);
     if (!booking) return res.status(404).json({ message: "Booking not found" });
 
     res.status(200).json(booking);

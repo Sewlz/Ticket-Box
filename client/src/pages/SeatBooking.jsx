@@ -1,11 +1,10 @@
-import { Booking } from "../components/Booking Conponents/Booking/Booking";
-import { SeatSelection } from "../components/Booking Conponents/SeatSelection/SeatSelection";
+import { Booking } from "../components/Booking Conponents/Booking";
+import { Container } from "react-bootstrap";
 import "./styles/SeatBooking.css";
 export function SeatBooking() {
   return (
-    <div className="d-flex justify-content-center booking-container">
-      <SeatSelection />
+    <Container>
       <Booking />
-    </div>
+    </Container>
   );
 }
