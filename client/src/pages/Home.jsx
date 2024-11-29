@@ -11,7 +11,10 @@ export function Home() {
       <CategoryWrapper />
       <Container className="py-4">
         <HomeBanner />
-        <TicketSection />
+        <TicketSection {...{ title: "Ticket Sale", param: "/latest" }} />
+        <TicketSection
+          {...{ title: "Music Event", param: "?category=Music" }}
+        />
       </Container>
     </>
   );

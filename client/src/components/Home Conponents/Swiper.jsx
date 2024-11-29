@@ -79,19 +79,19 @@ export function HomeBanner() {
   );
 }
 
-export function TicketSection() {
+export function TicketSection(data) {
   const navigate = useNavigate();
   const {
     data: events,
     loading,
     error,
-  } = useFetch(`${apiUrl}events/latest`, []);
+  } = useFetch(`${apiUrl}events${data.param}`, []);
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const resp = await axios.get(`${apiUrl}events/latest`);
-        setEvents(resp.data);
+        const resp = await axios.get(`${apiUrl}events${data.param}`);
+        setEvents(resp.data.slice(0, 6));
       } catch (error) {
         console.error("Failed to fetch events:", error);
       } finally {
@@ -105,10 +105,17 @@ export function TicketSection() {
   const handleNavigate = (eventId) => {
     navigate(`/event-detail/${eventId}`);
   };
-
   return (
     <div className="mb-4">
-      <h4 className="text-light mb-3">Sự kiện mới nhất</h4>
+      <div className="d-flex justify-content-between">
+        <h4 className="text-light mb-3">{data.title}</h4>
+        <a
+          className="text-light"
+          onClick={() => navigate(`/view-all?query=${data.param}`)}
+        >
+          View All
+        </a>
+      </div>
       {loading ? (
         <div className="loading-spinner">Loading...</div>
       ) : (

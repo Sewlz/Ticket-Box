@@ -7,13 +7,14 @@ import EventLayout from "./components/Event Create Components/EventLayout/EventL
 import { EventDetail } from "./pages/EventDetail";
 import { ResultPage } from "./components/Booking Conponents/Success";
 import BookingList from "./components/Booking Conponents/BookingList";
-
+import { ViewAll } from "./pages/ViewAll";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/seat-select/:eventId" element={<SeatBooking />} />
+      <Route path="/view-all" element={<ViewAll />} />
       {/* Trang kết quả tìm kiếm */}
       <Route path="/search" element={<SearchResults />} />{" "}
       <Route path="/seat-select" element={<SeatBooking />} />

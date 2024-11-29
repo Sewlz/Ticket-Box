@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "67441f7954447efcb687cc0a"
+  },
+  "eventId": {
+    "$oid": "67441e4b54447efcb687cbfe"
+  },
+  "userName": "John Doe",
+  "userEmail": "johndoe@example.com",
+  "seatsBooked": 2,
+  "totalPrice": 100,
+  "paymentStatus": "Completed",
+  "transactionId": "4G0983593J052292X",
+  "createdAt": {
+    "$date": "2024-11-20T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-25T07:29:19.440Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67442cdbda7d5b0d3e31cc41"
+  },
+  "eventId": {
+    "$oid": "67441e4b54447efcb687cc00"
+  },
+  "userName": "Johny Den",
+  "userEmail": "john.doe@example.com",
+  "seatsBooked": 2,
+  "totalPrice": 140,
+  "paymentStatus": "Completed",
+  "transactionId": "0KX93555UH626001A",
+  "createdAt": {
+    "$date": "2024-11-25T07:52:59.199Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-25T07:54:14.728Z"
+  },
+  "__v": 0
+}]

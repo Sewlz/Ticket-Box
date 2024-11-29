@@ -1,0 +1,98 @@
+[{
+  "_id": {
+    "$oid": "67441e4b54447efcb687cbff"
+  },
+  "title": "Art & Design Expo",
+  "image": "https://example.com/images/art-expo.jpg",
+  "description": "A creative space to showcase art and design.",
+  "date": "2024-11-25T14:00:00.000Z",
+  "location": "Art Gallery, New York",
+  "price": 60,
+  "availableSeats": 200,
+  "category": "Art",
+  "createdAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-25T07:00:17.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67441e4b54447efcb687cc00"
+  },
+  "title": "Music Fest 2024",
+  "image": "https://example.com/images/music-fest.jpg",
+  "description": "A lively festival celebrating music from around the world.",
+  "date": "2024-10-05T18:00:00.000Z",
+  "location": "Central Park, Chicago",
+  "price": 70,
+  "availableSeats": 496,
+  "category": "Music",
+  "createdAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-25T07:54:14.736Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67441e4b54447efcb687cc01"
+  },
+  "title": "Health & Wellness Seminar",
+  "image": "https://example.com/images/wellness-seminar.jpg",
+  "description": "An informative seminar on health and wellness trends.",
+  "date": "2024-09-20T09:00:00.000Z",
+  "location": "Community Hall, Seattle",
+  "price": 30,
+  "availableSeats": 150,
+  "category": "Health",
+  "createdAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67441e4b54447efcb687cc02"
+  },
+  "title": "Startup Pitch Night",
+  "image": "https://example.com/images/startup-pitch.jpg",
+  "description": "An evening where startups showcase their ideas to investors.",
+  "date": "2024-08-15T17:00:00.000Z",
+  "location": "Innovation Hub, Boston",
+  "price": 100,
+  "availableSeats": 50,
+  "category": "Business",
+  "createdAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-20T08:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67442059e0d43d4257f99fb6"
+  },
+  "title": "Music Fest 2024",
+  "image": "https://example.com/images/music-fest.jpg",
+  "description": "A lively festival celebrating music from around the world.",
+  "date": {
+    "$date": "2024-10-05T18:00:00.000Z"
+  },
+  "location": "Central Park, Chicago",
+  "price": 70,
+  "availableSeats": 500,
+  "category": "Music",
+  "createdAt": {
+    "$date": "2024-11-25T06:59:37.804Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-25T06:59:37.804Z"
+  },
+  "__v": 0
+}]
