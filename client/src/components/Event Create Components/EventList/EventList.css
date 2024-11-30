@@ -1,4 +1,3 @@
-/* Tổng thể container của danh sách sự kiện */
 .custom-event-list-container {
   display: flex;
   flex-direction: column;
@@ -105,6 +104,8 @@
 
 /* Phần nội dung */
 .custom-content {
+  flex-wrap: wrap;
+  gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -105,10 +105,9 @@ exports.deleteEvent = async (req, res) => {
   }
 };
 
-// @desc Get the latest events
 exports.getLatestEvents = async (req, res) => {
   try {
-    const events = await Event.find().sort({ createdAt: -1 }).limit(5); // Latest 5 events
+    const events = await Event.find().sort({ createdAt: -1 }).limit(5);
     res.status(200).json(events);
   } catch (error) {
     res.status(400).json({ error: error.message });
